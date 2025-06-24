@@ -1,8 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-// Sample models for demo
+interface ModelViewerElement extends HTMLElement {
+  enterAR: () => void;
+  // You can add more method definitions here if needed
+} // Sample models for demo
 
 const Index = () => {
+  const modelViewerRef = useRef<ModelViewerElement | null>(null);
+
   useEffect(() => {
     // Check if device is mobile
 
@@ -17,12 +22,17 @@ const Index = () => {
     document.head.appendChild(script);
 
     return () => {
-      // Cleanup
       if (document.head.contains(script)) {
         document.head.removeChild(script);
       }
     };
   }, []);
+
+  const activateAR = () => {
+    if (modelViewerRef.current) {
+      modelViewerRef.current.enterAR();
+    }
+  };
 
   return (
     <>
@@ -75,7 +85,16 @@ const Index = () => {
               backgroundColor: "transparent",
               borderRadius: "8px",
             }}
-          />
+          >
+            <button
+              onClick={() => activateAR()}
+              className="absolute bottom-10 md:bottom-0 right-4 md:right-0 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 z-10"
+            >
+              <span className="text-sm text-white/80">
+                🥽 Gericht als AR anzeigen
+              </span>
+            </button>
+          </model-viewer>
         </div>
       </div>
     </>

@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 
 interface ModelViewerElement extends HTMLElement {
   enterAR: () => void;
-  // You can add more method definitions here if needed
-} // Sample models for demo
+  canActivateAR: boolean;
+}
 
 const Index = () => {
   const modelViewerRef = useRef<ModelViewerElement | null>(null);
@@ -29,11 +29,11 @@ const Index = () => {
   }, []);
 
   const activateAR = () => {
-    const el = modelViewerRef.current;
-    if (el && "enterAR" in el) {
-      el.enterAR();
+    const viewer = modelViewerRef.current;
+    if (viewer?.canActivateAR) {
+      viewer.enterAR();
     } else {
-      console.warn("AR not available or model-viewer not ready.");
+      alert("AR is not available on this device.");
     }
   };
   return (
@@ -72,30 +72,26 @@ const Index = () => {
             }}
         /> */}
           <model-viewer
-            ref={modelViewerRef} // ✅ Attach the ref here
-            src={"./models/food_3d.glb"}
+            ref={modelViewerRef}
+            src="./models/food_3d.glb"
+            ios-src="./models/food_3d.usdz"
             alt="3D Model"
-            ar={true} // Force AR button to be shown even on non-mobile devices
-            ar-modes="webxr scene-viewer quick-look"
+            ar
+            ar-modes="scene-viewer webxr quick-look"
             ar-scale="auto"
-            environment-image="neutral"
-            exposure="0.6"
             camera-controls
             touch-action="pan-y"
             style={{
               width: "100%",
-              height: "100%",
+              height: "500px",
               backgroundColor: "transparent",
-              borderRadius: "8px",
             }}
           >
             <button
-              onClick={() => activateAR()}
-              className="absolute bottom-10 md:bottom-0 right-4 md:right-0 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 z-10"
+              onClick={activateAR}
+              className="absolute bottom-10 right-4 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 z-10"
             >
-              <span className="text-sm text-white/80">
-                🥽 Gericht als AR anzeigen
-              </span>
+              🥽 Gericht als AR anzeigen
             </button>
           </model-viewer>
         </div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom AR Trigger</title>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@google/model-viewer@latest"
+    ></script>
+    <style>
+      button {
+        padding: 10px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 3D Model Viewer -->
+    <model-viewer
+      id="modelViewer"
+      src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+      alt="Astronaut in a spacesuit"
+      ar
+      auto-rotate
+      camera-controls
+      style="width: 100%; height: 500px"
+    >
+    </model-viewer>
+
+    <!-- Custom AR Button -->
+    <button id="enterARButton">Enter AR</button>
+
+    <script>
+      // Access the model-viewer and button elements
+      const modelViewer = document.getElementById("modelViewer");
+      const arButton = document.getElementById("enterARButton");
+
+      // Add an event listener to the button to trigger AR
+      arButton.addEventListener("click", () => {
+        if (modelViewer) {
+          // Trigger AR experience
+          modelViewer.enterXR();
+        }
+      });
+    </script>
+  </body>
+</html>

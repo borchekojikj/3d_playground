@@ -1,16 +1,8 @@
-import HybridARViewer from "./components/FoodModel";
+// import HybridARViewer from "./components/FoodModel";
 // import ARViewer from "./components/FoodModel";
 
 function App() {
-  return (
-    <div>
-      <HybridARViewer
-        glbModelUrl="./models/food_3d.glb" // For WebXR devices
-        usdzModelUrl="./models/food_3d.usdz" // For iPhone
-        title="Banana 3D Model"
-      />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;

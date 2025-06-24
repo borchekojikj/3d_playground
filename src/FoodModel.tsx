@@ -8,25 +8,32 @@ const Index = () => {
 
     const style = document.createElement("style");
     style.innerHTML = `
-      model-viewer::part(ar-button) {
-        background-color: #6a4c9c;
-        border-radius: 12px;
-        padding: 10px 20px;
-        font-size: 14px;
-        color: white;
-        font-weight: bold;
-        transition: background-color 0.3s, transform 0.3s;
-      }
-      model-viewer::part(ar-button):hover {
-        background-color: #5a3f8b;
-        transform: scale(1.05);
-      }
-      model-viewer::part(ar-button):disabled {
-        background-color: #bbb;
-        color: #777;
-        cursor: not-allowed;
-      }
-    `;
+  model-viewer::part(ar-button) {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 12px 24px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  model-viewer::part(ar-button):hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+
+  model-viewer::part(ar-button):disabled {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
+  }
+`;
     document.head.appendChild(style);
 
     // Load model-viewer script

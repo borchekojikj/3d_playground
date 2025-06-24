@@ -70,6 +70,7 @@ const Index = () => {
             }}
         /> */}
           <model-viewer
+            ref={modelViewerRef} // ✅ Attach the ref here
             src={"./models/food_3d.glb"}
             alt="3D Model"
             ar={true} // Force AR button to be shown even on non-mobile devices

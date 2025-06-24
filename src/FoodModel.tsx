@@ -61,11 +61,6 @@ const Index = () => {
         {/* Header */}
         <div className="test">View in AR</div>
 
-        <div className=" bottom-10 md:bottom-0 right-4 md:right-0 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 z-10">
-          <span className="text-sm text-white/80">
-            🥽 Gericht als AR anzeigen
-          </span>
-        </div>
         <div className="relative z-10 p-6">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-4xl font-bold text-white mb-2">

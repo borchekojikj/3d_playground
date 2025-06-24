@@ -1,12 +1,7 @@
 import { useEffect, useRef } from "react";
 
-interface ModelViewerElement extends HTMLElement {
-  enterAR: () => void;
-  canActivateAR: boolean;
-}
-
 const Index = () => {
-  const modelViewerRef = useRef<ModelViewerElement | null>(null);
+  const modelViewerRef = useRef<HTMLModelViewerElement | null>(null);
 
   useEffect(() => {
     // Check if device is mobile
@@ -28,12 +23,9 @@ const Index = () => {
     };
   }, []);
 
-  const activateAR = () => {
-    const viewer = modelViewerRef.current;
-    if (viewer?.canActivateAR) {
-      viewer.enterAR();
-    } else {
-      alert("AR is not available on this device.");
+  const handleEnterAR = () => {
+    if (modelViewerRef.current) {
+      modelViewerRef.current.enterXR();
     }
   };
   return (
@@ -88,7 +80,7 @@ const Index = () => {
             }}
           >
             <button
-              onClick={activateAR}
+              onClick={handleEnterAR}
               className="absolute bottom-10 right-4 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 z-10"
             >
               🥽 Gericht als AR anzeigen

@@ -11,3 +11,9 @@ declare module "react" {
     }
   }
 }
+
+declare global {
+  interface HTMLModelViewerElement extends HTMLElement {
+    enterXR(): void;
+  }
+}

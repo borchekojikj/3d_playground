@@ -29,11 +29,13 @@ const Index = () => {
   }, []);
 
   const activateAR = () => {
-    if (modelViewerRef.current) {
-      modelViewerRef.current.enterAR();
+    const el = modelViewerRef.current;
+    if (el && "enterAR" in el) {
+      el.enterAR();
+    } else {
+      console.warn("AR not available or model-viewer not ready.");
     }
   };
-
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">

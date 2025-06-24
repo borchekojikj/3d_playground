@@ -63,7 +63,7 @@ model-viewer::part(default-ar-button):hover {
 }
 
 model-viewer::part(default-ar-button)::before {
-  content: "🥽 "; /* Emoji for AR */
+  content: "🥽 Gericht als AR anzeigen"; /* Emoji for AR */
   font-size: 1.25rem; /* Adjust emoji size */
   margin-right: 12px; /* Increased space between emoji and text */
   line-height: 1.2; /* Adjust line height to avoid weird vertical spacing */

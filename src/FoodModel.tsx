@@ -6,36 +6,6 @@ const Index = () => {
   useEffect(() => {
     // Check if device is mobile
 
-    const style = document.createElement("style");
-    style.innerHTML = `
-  model-viewer::part(ar-button) {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 12px 24px;
-    font-size: 14px;
-    color: #ffffff;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  model-viewer::part(ar-button):hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-  }
-
-  model-viewer::part(ar-button):disabled {
-    background: rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.5);
-    border-color: rgba(255, 255, 255, 0.1);
-    cursor: not-allowed;
-  }
-`;
-    document.head.appendChild(style);
-
     // Load model-viewer script
     const script = document.createElement("script");
     script.type = "module";
@@ -51,7 +21,6 @@ const Index = () => {
       if (document.head.contains(script)) {
         document.head.removeChild(script);
       }
-      document.head.removeChild(style);
     };
   }, []);
 
@@ -106,13 +75,7 @@ const Index = () => {
               backgroundColor: "transparent",
               borderRadius: "8px",
             }}
-          >
-            <div className="absolute bottom-10 md:bottom-0 right-4 md:right-0 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 z-10">
-              <span className="text-sm text-white/80">
-                🥽 Gericht als AR anzeigen
-              </span>
-            </div>
-          </model-viewer>
+          />
         </div>
       </div>
     </>

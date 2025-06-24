@@ -174,25 +174,35 @@ const HybridARViewer: React.FC<HybridARViewerProps> = ({
         </div>
 
         {usdzModelUrl ? (
-          <a
-            href={usdzModelUrl}
-            rel="ar"
-            style={{
-              display: "inline-block",
-              padding: "18px 35px",
-              background: "rgba(255, 255, 255, 0.2)",
-              backdropFilter: "blur(10px)",
-              color: "white",
-              textDecoration: "none",
-              borderRadius: "15px",
-              fontSize: "18px",
-              fontWeight: "600",
-              border: "1px solid rgba(255, 255, 255, 0.3)",
-              transition: "all 0.3s ease",
-            }}
-          >
-            🚀 Launch AR Experience
-          </a>
+          // <a
+          //   href={usdzModelUrl}
+          //   rel="ar"
+          //   style={{
+          //     display: "inline-block",
+          //     padding: "18px 35px",
+          //     background: "rgba(255, 255, 255, 0.2)",
+          //     backdropFilter: "blur(10px)",
+          //     color: "white",
+          //     textDecoration: "none",
+          //     borderRadius: "15px",
+          //     fontSize: "18px",
+          //     fontWeight: "600",
+          //     border: "1px solid rgba(255, 255, 255, 0.3)",
+          //     transition: "all 0.3s ease",
+          //   }}
+          // >
+          //   🚀 Launch AR Experience
+          // </a>
+          <model-viewer
+            src={glbModelUrl}
+            ios-src={usdzModelUrl}
+            alt={title}
+            ar
+            ar-modes="quick-look"
+            auto-rotate
+            camera-controls
+            style={{ width: "100%", height: "100vh" }}
+          />
         ) : (
           <div
             style={{

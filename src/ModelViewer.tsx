@@ -85,25 +85,11 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
           "--ar-button-right": "120px",
           "--ar-button-bottom": "20px",
         }}
-      />
-      <button
-        onClick={launchAR}
-        style={{
-          position: "absolute",
-          bottom: "20px",
-          right: "20px",
-          backgroundColor: "#00bfa5",
-          color: "#fff",
-          padding: "12px 20px",
-          borderRadius: "10px",
-          border: "none",
-          fontSize: "16px",
-          cursor: "pointer",
-          zIndex: 5,
-        }}
       >
-        View in AR
-      </button>
+        <button onClick={launchAR} className="ar_button">
+          View in AR
+        </button>
+      </model-viewer>
     </div>
   );
 };

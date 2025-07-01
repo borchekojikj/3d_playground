@@ -22,15 +22,8 @@ body {
 model-viewer::part(default-ar-button) {
   display: none;
 }
-#custom-ar-button {
+.ar_button {
   background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 10px;
 }
 h1 {
   font-size: 3.2em;

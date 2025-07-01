@@ -5,7 +5,7 @@ import ModelViewer from "./ModelViewer";
 
 function App() {
   return (
-    <div style={{ height: "500px" }}>
+    <div style={{ height: "500px" }} className="bg-gray-500">
       <ModelViewer modelGlbURL="/models/bannana.glb" height="35vh" />
     </div>
   );

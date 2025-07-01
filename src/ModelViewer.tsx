@@ -80,14 +80,18 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
         style={{
           width: "100%",
           height: "100%",
+          position: "relative",
           backgroundColor: "transparent",
           borderRadius: "8px",
-          "--ar-button-right": "120px",
-          "--ar-button-bottom": "20px",
         }}
       >
-        <button onClick={launchAR} className="ar_button">
-          View in AR
+        <button
+          onClick={launchAR}
+          className="absolute bottom-10 md:bottom-0 right-4 md:right-0 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 z-10"
+        >
+          <span className="text-sm text-white/80">
+            🥽 Gericht als AR anzeigen
+          </span>
         </button>
       </model-viewer>
     </div>

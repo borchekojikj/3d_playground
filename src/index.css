@@ -38,6 +38,10 @@ model-viewer .ar-button:active {
   transform: scale(0.96);
 }
 
+model-viewer .ar-button {
+  display: none !important;
+}
+
 #custom-ar-button {
   background-color: #007bff;
   color: white;

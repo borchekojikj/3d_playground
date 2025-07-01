@@ -70,8 +70,14 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
         ar={isMobile}
         ar-modes="webxr scene-viewer quick-look"
         ar-scale="auto"
-        environment-image="city"
-        exposure="0.2"
+        // Realistic Lighting Setup
+        // Safe, built-in environment options
+        environment-image="neutral" // or try "city", "legacy", "studio"
+        exposure="0.8"
+        shadow-intensity="1.0"
+        shadow-softness="0.4"
+        // Enhanced Material Rendering
+        tone-mapping="aces"
         camera-controls
         camera-orbit="auto 75deg auto" // Sets a good default starting angle (75deg is slightly above horizontal)
         min-camera-orbit="auto 45deg auto" // Prevents tilting down past 45 degrees (adjust as needed)

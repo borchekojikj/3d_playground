@@ -71,12 +71,12 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
         ar-modes="webxr scene-viewer quick-look"
         ar-scale="auto"
         // Realistic Lighting Setup
-        // Safe, built-in environment options
-        environment-image="neutral" // or try "city", "legacy", "studio"
-        exposure="0.8"
-        shadow-intensity="1.0"
-        shadow-softness="0.4"
-        // Enhanced Material Rendering
+        // AR-optimized settings
+        environment-image="neutral"
+        exposure="0.3" // Lower exposure for AR
+        shadow-intensity="0.5" // Reduced shadows for AR
+        shadow-softness="0.8"
+        // Tone mapping helps with AR color accuracy
         tone-mapping="aces"
         camera-controls
         camera-orbit="auto 75deg auto" // Sets a good default starting angle (75deg is slightly above horizontal)

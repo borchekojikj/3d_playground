@@ -43,51 +43,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-model-viewer::part(default-ar-button) {
-  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent background */
-  border-radius: 12px; /* rounded corners */
-  padding: 8px 20px; /* Adjusted inner spacing to make the button wider */
-  backdrop-filter: blur(8px); /* soft blur effect */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
-  color: rgba(255, 255, 255, 0.9); /* text color */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 200px; /* Ensure a minimum width for the button */
-  width: auto; /* Let the button grow based on content */
-}
-
-model-viewer::part(default-ar-button):hover {
-  background-color: rgba(255, 255, 255, 0.2); /* lighter background on hover */
-  cursor: pointer;
-}
-
-model-viewer::part(default-ar-button)::before {
-  content: "🥽 Gericht als AR anzeigen"; /* Emoji for AR */
-  font-size: 1.25rem; /* Adjust emoji size */
-  margin-right: 12px; /* Increased space between emoji and text */
-  line-height: 1.2; /* Adjust line height to avoid weird vertical spacing */
-}
-
-model-viewer::part(default-ar-button) span {
-  font-size: 1rem; /* Slightly larger font size */
-  font-weight: bold; /* Bolder text */
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* subtle shadow effect */
-  line-height: 1.2; /* Adjust line height to match the emoji */
-}
-
-.test {
-  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent background */
-  border-radius: 12px; /* rounded corners */
-  padding: 8px 12px; /* inner spacing */
-  backdrop-filter: blur(8px); /* soft blur effect */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
-  color: rgba(255, 255, 255, 0.9); /* text color */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

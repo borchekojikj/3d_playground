@@ -64,6 +64,7 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
       </style>
 
       <model-viewer
+        ref={modelRef}
         src={modelGlbURL}
         alt="3D Model"
         ar={isMobile}

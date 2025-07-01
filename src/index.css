@@ -19,10 +19,9 @@ body {
   min-height: 100vh;
 }
 
-model-viewer::part(ar-button) {
-  display: none !important;
+model-viewer::part(default-ar-button) {
+  display: none;
 }
-
 #custom-ar-button {
   background-color: #007bff;
   color: white;

@@ -61,7 +61,7 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
           height: "100%",
           backgroundColor: "transparent",
           borderRadius: "8px",
-          "--ar-button-right": "60px",
+          "--ar-button-right": "120px",
           "--ar-button-bottom": "20px",
         }}
       />

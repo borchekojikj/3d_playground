@@ -43,6 +43,18 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
       className={`w-full    overflow-hidden relative  min-w-[100vw] md:min-w-0 `}
       style={{ height }}
     >
+      <style>
+        {`
+          model-viewer {
+            --ar-button-right: 120px; /* Adjust this value */
+            --ar-button-bottom: 20px; /* Adjust this value */
+            /* Add !important if absolutely necessary, but try without first */
+            /* --ar-button-right: 120px !important; */
+            /* --ar-button-bottom: 20px !important; */
+          }
+        `}
+      </style>
+
       <model-viewer
         src={modelGlbURL}
         alt="3D Model"

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import ModelViewer from "./ModelViewer";
 
 const Index = () => {
   const modelViewerRef = useRef<HTMLModelViewerElement | null>(null);
@@ -46,6 +47,7 @@ const Index = () => {
         </div>
 
         <div style={{ height: "500px" }}>
+          <ModelViewer modelGlbURL="/models/bannana.glb" height="35vh" />
           {/* <model-viewer
           src={"./models/food_3d.glb"}
           alt="3D Model"
@@ -63,7 +65,7 @@ const Index = () => {
             borderRadius: "8px",
             }}
         /> */}
-          <model-viewer
+          {/* <model-viewer
             ref={modelViewerRef}
             src="./models/food_3d.glb"
             ios-src="./models/food_3d.usdz"
@@ -85,7 +87,7 @@ const Index = () => {
             >
               🥽 Gericht als AR anzeigen
             </button>
-          </model-viewer>
+          </model-viewer> */}
         </div>
       </div>
     </>

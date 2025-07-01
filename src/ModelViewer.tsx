@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 type ModelViewerProps = {
   modelGlbURL: string;
@@ -11,6 +11,14 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
 }) => {
   const [isMobile, setIsMobile] = useState(false);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const modelRef = useRef<any>(null);
+
+  const launchAR = () => {
+    if (modelRef.current) {
+      modelRef.current.activateAR();
+    }
+  };
   useEffect(() => {
     // Check if device is mobile
     const userAgent = navigator.userAgent.toLowerCase();
@@ -77,6 +85,24 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
           "--ar-button-bottom": "20px",
         }}
       />
+      <button
+        onClick={launchAR}
+        style={{
+          position: "absolute",
+          bottom: "20px",
+          right: "20px",
+          backgroundColor: "#00bfa5",
+          color: "#fff",
+          padding: "12px 20px",
+          borderRadius: "10px",
+          border: "none",
+          fontSize: "16px",
+          cursor: "pointer",
+          zIndex: 5,
+        }}
+      >
+        View in AR
+      </button>
     </div>
   );
 };

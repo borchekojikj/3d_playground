@@ -70,8 +70,8 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
         ar={isMobile}
         ar-modes="webxr scene-viewer quick-look"
         ar-scale="auto"
-        environment-image="neutral"
-        exposure="0.4"
+        environment-image="city"
+        exposure="0.2"
         camera-controls
         camera-orbit="auto 75deg auto" // Sets a good default starting angle (75deg is slightly above horizontal)
         min-camera-orbit="auto 45deg auto" // Prevents tilting down past 45 degrees (adjust as needed)
@@ -87,7 +87,7 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
       >
         <button
           onClick={launchAR}
-          className="absolute bottom-10 md:bottom-0 right-4 md:right-0 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 z-10"
+          className="absolute bottom-0  md:bottom-0 right-4 md:right-0 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 z-10"
         >
           <span className="text-sm text-white/80">
             🥽 Gericht als AR anzeigen

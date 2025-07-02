@@ -13,8 +13,8 @@ function App() {
       <hr />
 
       <ARModelViewer
-        glbSrc="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-        usdzSrc="https://modelviewer.dev/shared-assets/models/Astronaut.usdz"
+        glbSrc="/models/burger.glb"
+        usdzSrc="/models/burger.usdz"
         alt="Astronaut model"
       />
 

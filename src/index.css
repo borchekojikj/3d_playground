@@ -19,9 +19,9 @@ body {
   min-height: 100vh;
 }
 
-model-viewer::part(default-ar-button) {
+/* model-viewer::part(default-ar-button) {
   display: none;
-}
+} */
 .ar_button {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);

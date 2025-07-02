@@ -62,7 +62,7 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
           }
         `}
       </style>
-
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       <model-viewer
         ref={modelRef}
         src={modelGlbURL}

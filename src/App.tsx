@@ -1,6 +1,7 @@
 // import HybridARViewer from "./components/FoodModel";
 // import ARViewer from "./components/FoodModel";
 
+import ARModelViewer from "./ARModelViewer";
 import ModelViewer from "./ModelViewer";
 
 function App() {
@@ -8,6 +9,14 @@ function App() {
     <div style={{ height: "500px" }} className="bg-gray-500">
       <ModelViewer modelGlbURL="/models/bannana.glb" height="35vh" />
       <ModelViewer modelGlbURL="/models/food_3d.glb" height="35vh" />
+
+      <hr />
+
+      <ARModelViewer
+        glbSrc="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+        usdzSrc="https://modelviewer.dev/shared-assets/models/Astronaut.usdz"
+        alt="Astronaut model"
+      />
     </div>
   );
 }

@@ -8,6 +8,7 @@ type ModelViewerProps = {
 const ModelViewer: React.FC<ModelViewerProps> = ({
   modelGlbURL,
   height = "50vh",
+  modelUsdzURL,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -66,6 +67,7 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
       <model-viewer
         ref={modelRef}
         src={modelGlbURL}
+        ios-src={modelUsdzURL}
         alt="3D Model"
         ar={isMobile}
         ar-modes="webxr scene-viewer quick-look"

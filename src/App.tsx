@@ -17,6 +17,10 @@ function App() {
         usdzSrc="https://modelviewer.dev/shared-assets/models/Astronaut.usdz"
         alt="Astronaut model"
       />
+
+      <hr />
+
+      <ARModelViewer glbSrc="/models/bannana.glb" alt="Astronaut model" />
     </div>
   );
 }
